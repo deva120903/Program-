@@ -1,0 +1,89 @@
+import java.util.*;
+class Main
+{
+    Node root;
+    class Node
+    {
+        int data;
+        Node left;
+        Node right;
+        Node(int val)
+        {
+            data=val;
+            left=null;
+            right=null;
+        }
+    }
+    Main(int r)
+    {
+        Node newnode=new Node(r);
+        root=newnode;
+    }
+    public void insert_left(int val)
+    {
+        Node newnode=new Node(val);
+        {
+            root.left=newnode;
+        }
+    }
+    public void insert_right(int val)
+    {
+        Node newnode=new Node(val);
+        {
+            root.right=newnode;
+        }
+    }
+    public void preorder(Node root)
+    {
+        if(root!=null) {
+            System.out.print(root.data + " ");
+            preorder(root.left);
+            preorder(root.right);
+        }
+    }
+    public void inorder(Node root)
+    {
+        if(root!=null)
+        {
+            inorder(root.left);
+            System.out.print(root.data+" ");
+            inorder(root.right);
+        }
+    }
+
+    public void postorder(Node root)
+    {
+        if(root!=null)
+        {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data+" ");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int r=s.nextInt();
+        Main tree=new Main(r);
+
+        while(true)
+        {
+            int m=s.nextInt();
+            int n=s.nextInt();
+            if(m==-1 && n==-1) {
+                break;
+            }
+            else {
+                tree.insert_left(m);
+                tree.insert_right(n);
+            }
+        }
+        tree.preorder(tree.root);
+        System.out.println();
+        tree.inorder(tree.root);
+        System.out.println();
+        tree.postorder(tree.root);
+    }
+
+}
