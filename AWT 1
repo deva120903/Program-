@@ -1,0 +1,25 @@
+import java.awt.*;
+class AWT extends Frame{
+AWT(){
+    Button b1=new Button("Login");
+    Label l1=new Label("Email");
+    TextArea t1=new TextArea("Enter the Discription");
+    Checkbox c1=new Checkbox("Age");
+    Choice c2=new Choice();
+    c2.add("Chennai");
+    c2.add("Coimbatore");
+    c2.add("Erode");
+    add(t1);
+    add(c1);
+    add(c2);
+    add(t1);
+    add(l1);
+    add(b1);
+    setLayout(new FlowLayout());
+    setVisible(true);
+    setSize(50,50);
+}
+public static void  main(String args[]){
+    new AWT();
+  }
+}
