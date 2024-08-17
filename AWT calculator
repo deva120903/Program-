@@ -1,0 +1,81 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Main extends Frame
+{
+    Main()
+    {
+        Frame f = new Frame("Calculator");
+        f.setSize(400, 400);
+        Label l = new Label("CALCULATOR");
+        l.setBounds(150, 50, 100, 30);
+        Label l1 = new Label("First number");
+        l1.setBounds(50, 100, 100, 30);
+        TextField k = new TextField();
+        k.setBounds(200, 100, 100, 30);
+        Label l2 = new Label("Second number");
+        l2.setBounds(50, 150, 100, 30);
+        TextField t = new TextField();
+        t.setBounds(200, 150, 100, 30);
+        Button add = new Button("+");
+        add.setBounds(50, 200, 50, 30);
+        Button sub = new Button("-");
+        sub.setBounds(110, 200, 50, 30);
+        Button mul = new Button("*");
+        mul.setBounds(170, 200, 50, 30);
+        Button div = new Button("/");
+        div.setBounds(230, 200, 50, 30);
+        Label result = new Label("Result: ");
+        result.setBounds(50, 250, 250, 30);
+        ActionListener s= new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                String a=k.getText();
+                String b=t.getText();
+                int i=Integer.parseInt(a.trim());
+                int j=Integer.parseInt(b.trim());
+                int c=0;
+                if(e.getSource()==add)
+                {
+                    c=i+j;
+                }
+                if(e.getSource()==sub)
+                {
+                    c=i-j;
+                }
+                if(e.getSource()==mul)
+                {
+                    c=i*j;
+                }
+                if(e.getSource()==div)
+                {
+                    c=i/j;
+                }
+                result.setText("Result: " + c);
+            }
+        };
+        add.addActionListener(s);
+        sub.addActionListener(s);
+        mul.addActionListener(s);
+        div.addActionListener(s);
+        f.add(l);
+        f.add(l1);
+        f.add(l2);
+        f.add(t);
+        f.add(k);
+        f.add(add);
+        f.add(sub);
+        f.add(mul);
+        f.add(div);
+        f.add(result);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setSize(350,350);
+
+    }
+    public static void main(String[]args)
+    {
+        new Main();
+    }
+}
