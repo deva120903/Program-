@@ -1,0 +1,26 @@
+import java.awt.*;
+class AWT {
+    AWT(){
+        Frame f1=new Frame("Registration");
+        Button b1=new Button("Login");
+        Label l1=new Label("Email");
+        TextArea t1=new TextArea("Enter the Discription");
+        Checkbox c1=new Checkbox("Age");
+        Choice c2=new Choice();
+        c2.add("Chennai");
+        c2.add("Coimbatore");
+        c2.add("Erode");
+        f1.add(t1);
+        f1.add(c1);
+        f1.add(c2);
+        f1.add(t1);
+        f1.add(l1);
+        f1.add(b1);
+        f1.setLayout(new FlowLayout());
+        f1.setVisible(true);
+        f1.setSize(50,50);
+    }
+    public static void  main(String args[]){
+        new AWT();
+    }
+}
